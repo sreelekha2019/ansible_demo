@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: false
+
+  tasks:
+  - name: Execute the Uptime command over command module
+    register: uptimeoutput
+    command: "uptime"
+
+  - debug:
+      var: uptimeoutput.stdout_lines    
+            
